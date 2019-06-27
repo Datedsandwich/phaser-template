@@ -1,0 +1,47 @@
+{
+    "name": "breakout",
+    "version": "0.0.1",
+    "description": "Breakout game using Phaser",
+    "main": "src/index.js",
+    "author": "Luke Robinson",
+    "scripts": {
+        "build": "webpack --mode production",
+        "dev": "webpack-dev-server --open --mode development",
+        "format": "prettier --write 'src/**/*.js'",
+        "precommit": "lint-staged",
+        "deploy": "git push origin --delete gh-pages && git subtree push --prefix dist origin gh-pages"
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run format",
+            "git add"
+        ]
+    },
+    "dependencies": {
+        "babel-plugin-transform-class-properties": "^6.24.1",
+        "file-loader": "^2.0.0",
+        "phaser": "^3.13.0",
+        "raw-loader": "^0.5.1"
+    },
+    "devDependencies": {
+        "babel-core": "^6.26.0",
+        "babel-loader": "^7.1.2",
+        "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "babel-polyfill": "^6.26.0",
+        "babel-preset-env": "^1.6.1",
+        "clean-webpack-plugin": "^0.1.18",
+        "copy-webpack-plugin": "^4.5.2",
+        "css-loader": "^0.28.11",
+        "html-loader": "^0.5.5",
+        "html-webpack-harddisk-plugin": "^0.2.0",
+        "html-webpack-plugin": "^3.1.0",
+        "husky": "^0.14.3",
+        "lint-staged": "^7.3.0",
+        "mini-css-extract-plugin": "^0.4.3",
+        "optimize-css-assets-webpack-plugin": "^5.0.1",
+        "prettier": "^1.14.3",
+        "webpack": "^4.20.2",
+        "webpack-cli": "^3.1.1",
+        "webpack-dev-server": "^3.1.9"
+    }
+}
